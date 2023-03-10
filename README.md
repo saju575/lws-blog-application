@@ -31,8 +31,8 @@
      
   </tr>
   <tr>
-    <td><img src="./src/assets/images/home.png" width="600" height="400"></td>
-    <td><img src="./src/assets/images/details.png" width="600" height="400"></td>
+    <td><img src="./src/assets/images/home.png" height="45%"></td>
+    <td><img src="./src/assets/images/details.png"  height="45%"></td>
     
   </tr>
  </table>
