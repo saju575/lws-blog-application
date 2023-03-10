@@ -1,3 +1,9 @@
+<style>
+td, th {
+   border: none!important;
+}
+</style>
+
 ## Blog Application
 
 ### Live Preview [Preview](https://github)
@@ -24,7 +30,7 @@
 
 ### Web page screenshot
 
-<table border=0>
+<table>
   <tr>
     <td>Home Page</td>
      <td>Blog Detail Page</td>
