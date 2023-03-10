@@ -10,10 +10,13 @@ const initialState = {
 
 //create fetchPost async thunk
 
-export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
-  const posts = await getPosts();
-  return posts;
-});
+export const fetchPosts = createAsyncThunk(
+  "posts/fetchPosts",
+  async ({ sort, filter }) => {
+    const posts = await getPosts({ sort, filter });
+    return posts;
+  }
+);
 
 const postsSlice = createSlice({
   name: "posts",

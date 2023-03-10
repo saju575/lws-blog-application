@@ -1,6 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  filterSelected,
+  sortSeleted,
+} from "../../features/filters/filtersSlice";
 
 const Filters = () => {
+  const state = useSelector((state) => state.search);
+  const [searchInput, setSearchInput] = useState(state);
+
+  const dispatch = useDispatch();
+
+  const handleFilter = (e) => {
+    setSearchInput((prv) => {
+      return {
+        ...prv,
+        filter: e.target.value,
+      };
+    });
+
+    dispatch(filterSelected(e.target.value));
+  };
+
+  const handleSortSelected = (e) => {
+    setSearchInput((prv) => {
+      return {
+        ...prv,
+        sort: e.target.value,
+      };
+    });
+    dispatch(sortSeleted(e.target.value));
+  };
+
   return (
     <aside>
       <div className="sidebar-items">
@@ -10,6 +41,7 @@ const Filters = () => {
             name="sort"
             id="lws-sort"
             className="w-full max-w-[150px] border-2 rounded-md text-gray-500"
+            onChange={handleSortSelected}
           >
             <option value="">Default</option>
             <option value="newest">Newest</option>
@@ -25,10 +57,12 @@ const Filters = () => {
                 type="radio"
                 name="filter"
                 id="lws-all"
-                checked
+                value={"all"}
+                checked={searchInput.filter === "all"}
                 className="radio"
+                onChange={handleFilter}
               />
-              <label for="lws-all">All</label>
+              <label htmlFor="lws-all">All</label>
             </div>
             <div>
               <input
@@ -36,8 +70,11 @@ const Filters = () => {
                 name="filter"
                 id="lws-saved"
                 className="radio"
+                value={"saved"}
+                checked={searchInput.filter === "saved"}
+                onChange={handleFilter}
               />
-              <label for="lws-saved">Saved</label>
+              <label htmlFor="lws-saved">Saved</label>
             </div>
           </div>
         </div>

@@ -17,7 +17,7 @@ const BlogDetails = () => {
   useEffect(() => {
     dispatch(fetchPost({ id: blogId }));
   }, [dispatch, blogId]);
-  console.log(post);
+  // console.log(post);
   //decide what to rander
   let content = null;
   if (isLoading) {

@@ -8,10 +8,11 @@ const Posts = () => {
   const { isLoading, isError, error, posts } = useSelector(
     (state) => state.posts
   );
+  const { sort, filter } = useSelector((state) => state.search);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchPosts());
-  }, [dispatch]);
+    dispatch(fetchPosts({ sort, filter }));
+  }, [dispatch, sort, filter]);
 
   //decide what to rander
   let content = null;
