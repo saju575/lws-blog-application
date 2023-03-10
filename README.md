@@ -1,8 +1,3 @@
-<style>
-td, th {
-   border: none!important;
-}
-</style>
 
 ## Blog Application
 
@@ -30,7 +25,7 @@ td, th {
 
 ### Web page screenshot
 
-<table>
+<table border="0">
   <tr>
     <td>Home Page</td>
      <td>Blog Detail Page</td>
