@@ -1,7 +1,7 @@
 
 ## Blog Application
 
-### Live Preview [Preview](https://github)
+### Live Preview [Preview](https://lws-blogs-post.netlify.app)
 
 ### Technologies used in this application
 
